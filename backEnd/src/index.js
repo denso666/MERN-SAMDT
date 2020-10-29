@@ -5,7 +5,7 @@ const app = express();
 
 
 //      SETTINGS
-app.set('port',process.env.PORT || 3000);
+app.set('port',process.env.PORT || 4000);
 app.set('appName',"REST_API -> SAMDT");
 
 

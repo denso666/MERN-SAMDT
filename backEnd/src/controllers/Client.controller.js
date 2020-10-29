@@ -1,11 +1,11 @@
 const Client = require('../models/Client.model');
-const clientsCtrl = {};
+const clientCtrl = {};
 
-clientsCtrl.getClients = async (req,res) => {
+clientCtrl.getClients = async (req,res) => {
     const response = await Client.find({});
     res.json(response);
 }
-clientsCtrl.postClient = async (req,res) => {
+clientCtrl.postClient = async (req,res) => {
     const newClient = new Client({
         name: req.body.name,
         rfc: req.body.rfc,
@@ -27,12 +27,12 @@ clientsCtrl.postClient = async (req,res) => {
         }
     });
 }
-clientsCtrl.getClient = async (req,res) => {
+clientCtrl.getClient = async (req,res) => {
     const id = req.params.id;
     const response = await Client.findOne({_id:id});
     res.json(response);
 }
-clientsCtrl.updateClient = async (req,res) => {
+clientCtrl.updateClient = async (req,res) => {
     const id = req.params.id;
     const client = {
         name: req.body.name,
@@ -47,10 +47,10 @@ clientsCtrl.updateClient = async (req,res) => {
 
     res.json(response);
 }
-clientsCtrl.deleteClient = async (req,res) => {
+clientCtrl.deleteClient = async (req,res) => {
     const id = req.params.id;
     const response = await Client.deleteOne({_id:id});
     res.json(response);
 }
 
-module.exports = clientsCtrl;
+module.exports = clientCtrl;

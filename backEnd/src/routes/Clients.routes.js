@@ -1,16 +1,16 @@
 const { Router } = require('express');
-const Client = require('../controllers/Clients.controller');
+const Ctrl = require('../controllers/Client.controller');
 require('../db');
 
 const router = Router();
 
 router.route('/')
-    .get(Client.getClients)
-    .post(Client.postClient);
+    .get(Ctrl.getClients)
+    .post(Ctrl.postClient);
 
 router.route('/:id')
-    .get(Client.getClient)
-    .put(Client.updateClient)
-    .delete(Client.deleteClient);
+    .get(Ctrl.getClient)
+    .put(Ctrl.updateClient)
+    .delete(Ctrl.deleteClient);
 
 module.exports = router;

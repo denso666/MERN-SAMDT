@@ -1,5 +1,6 @@
 const express =  require('express');
 const morgan = require('morgan');
+const cors = require('cors');
 require('dotenv').config();
 const app = express();
 
@@ -10,6 +11,7 @@ app.set('appName',"REST_API -> SAMDT");
 
 
 //      MIDDLEWARE
+app.use(cors());
 app.use(morgan('dev'));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json())
@@ -18,6 +20,7 @@ app.use(express.json())
 //      ROUTES
 app.use('/api/employees',require('./routes/Employees.routes'));
 app.use('/api/providers',require('./routes/Providers.routes'));
+app.use('/api/products',require('./routes/Products.routes'));
 app.use('/api/clients',require('./routes/Clients.routes'));
 app.use('/api/raws',require('./routes/Raws.routes'));
 

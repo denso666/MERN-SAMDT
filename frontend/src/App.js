@@ -15,10 +15,13 @@ function App() {
 
       <Navigation/>
 
-      <Route path="/sales" exact component={SalesList}/>
-      <Route path="/clients" exact component={ClientsList}/>
-      <Route path="/products" exact component={ProductsList}/>
-      <Route path="/employees" exact component={EmployeesList}/>
+      <div className="container p-4">
+        <Route path="/sales" exact component={SalesList}/>
+        <Route path="/clients" exact component={ClientsList}/>
+        <Route path="/products" exact component={ProductsList}/>
+        <Route path="/employees" exact component={EmployeesList}/>
+      </div>
+
     </Router>
   );
 }
